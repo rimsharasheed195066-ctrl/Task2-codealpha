@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Mini Social - A modern social media platform">
+
+    <title>Mini Social | Connect & Share</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <span>Mini<span class="logo-highlight">Social</span></span>
+            </div>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Mini Social..."
+            >
+        </div>
+
+        <!-- Navigation -->
+
+        <nav class="nav-links">
+
+            <button class="nav-item active" onclick="showSection('home')">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
+
+            <button class="nav-item" onclick="showSection('explore')">
+                <i class="fa-solid fa-compass"></i>
+                <span>Explore</span>
+            </button>
+
+            <button class="nav-item notification-btn" onclick="showNotifications()">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-count">3</span>
+            </button>
+
+            <button class="nav-item" onclick="showMessages()">
+                <i class="fa-regular fa-message"></i>
+            </button>
+
+            <div class="profile-mini" onclick="toggleProfileMenu()">
+                <img
+                    src="https://i.pravatar.cc/100?img=47"
+                    alt="Profile"
+                >
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+        <!-- ================= LEFT SIDEBAR ================= -->
+
+        <aside class="left-sidebar">
+
+            <div class="profile-card">
+
+                <img
+                    class="profile-cover"
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+                    alt="Cover"
+                >
+
+                <img
+                    class="profile-image"
+                    src="https://i.pravatar.cc/150?img=47"
+                    alt="Alex Morgan"
+                >
+
+                <h3>Alex Morgan</h3>
+
+                <p>@alexmorgan</p>
+
+                <div class="profile-stats">
+
+                    <div>
+                        <strong>248</strong>
+                        <span>Posts</span>
+                    </div>
+
+                    <div>
+                        <strong>12.8K</strong>
+                        <span>Followers</span>
+                    </div>
+
+                    <div>
+                        <strong>486</strong>
+                        <span>Following</span>
+                    </div>
+
+                </div>
+
+                <button class="profile-btn" onclick="openProfile()">
+                    View Profile
+                </button>
+
+            </div>
+
+
+            <!-- Sidebar Menu -->
+
+            <div class="sidebar-menu">
+
+                <button class="sidebar-item active" onclick="showSection('home')">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </button>
+
+                <button class="sidebar-item" onclick="showSection('explore')">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore
+                </button>
+
+                <button class="sidebar-item" onclick="showMessages()">
+                    <i class="fa-solid fa-message"></i>
+                    Messages
+                    <span class="menu-badge">5</span>
+                </button>
+
+                <button class="sidebar-item" onclick="showNotifications()">
+                    <i class="fa-solid fa-bell"></i>
+                    Notifications
+                    <span class="menu-badge red">3</span>
+                </button>
+
+                <button class="sidebar-item" onclick="openProfile()">
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                </button>
+
+                <button class="sidebar-item">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Saved Posts
+                </button>
+
+                <button class="sidebar-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </button>
+
+            </div>
+
+
+            <div class="sidebar-footer">
+                <span>© 2026 Mini Social</span>
+                <span>Privacy · Terms</span>
+            </div>
+
+        </aside>
+
+
+        <!-- ================= CENTER CONTENT ================= -->
+
+        <section class="feed-section" id="mainContent">
+
+            <!-- Stories -->
+
+            <div class="stories-container">
+
+                <div class="stories-header">
+                    <h2>Stories</h2>
+
+                    <button onclick="viewAllStories()">
+                        View all
+                    </button>
+                </div>
+
+                <div class="stories">
+
+                    <!-- Create Story -->
+
+                    <div class="story create-story" onclick="createStory()">
+
+                        <div class="story-image">
+                            <img
+                                src="https://i.pravatar.cc/100?img=47"
+                                alt="Your story"
+                            >
+
+                            <div class="add-story">
+                                +
+                            </div>
+                        </div>
+
+                        <span>Your Story</span>
+
+                    </div>
+
+
+                    <div class="story">
+
+                        <div class="story-image story-active">
+                            <img
+                                src="https://i.pravatar.cc/100?img=32"
+                                alt="Sarah"
+                            >
+                        </div>
+
+                        <span>Sarah</span>
+
+                    </div>
+
+
+                    <div class="story">
+
+                        <div class="story-image story-active">
+                            <img
+                                src="https://i.pravatar.cc/100?img=12"
+                                alt="Daniel"
+                            >
+                        </div>
+
+                        <span>Daniel</span>
+
+                    </div>
+
+
+                    <div class="story">
+
+                        <div class="story-image story-active">
+                            <img
+                                src="https://i.pravatar.cc/100?img=44"
+                                alt="Emily"
+                            >
+                        </div>
+
+                        <span>Emily</span>
+
+                    </div>
+
+
+                    <div class="story">
+
+                        <div class="story-image">
+                            <img
+                                src="https://i.pravatar.cc/100?img=14"
+                                alt="James"
+                            >
+                        </div>
+
+                        <span>James</span>
+
+                    </div>
+
+
+                    <div class="story">
+
+                        <div class="story-image story-active">
+                            <img
+                                src="https://i.pravatar.cc/100?img=25"
+                                alt="Mia"
+                            >
+                        </div>
+
+                        <span>Mia</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Create Post -->
+
+            <div class="create-post">
+
+                <div class="create-post-top">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=47"
+                        alt="Profile"
+                    >
+
+                    <textarea
+                        id="postInput"
+                        placeholder="What's on your mind, Alex?"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="post-options">
+
+                    <button onclick="selectPostOption('photo')">
+                        <i class="fa-regular fa-image green"></i>
+                        Photo
+                    </button>
+
+                    <button onclick="selectPostOption('video')">
+                        <i class="fa-solid fa-video red-text"></i>
+                        Video
+                    </button>
+
+                    <button onclick="selectPostOption('feeling')">
+                        <i class="fa-regular fa-face-smile yellow"></i>
+                        Feeling
+                    </button>
+
+                    <button class="post-submit" onclick="createPost()">
+                        Post
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Feed -->
+
+            <div id="postsContainer">
+
+
+                <!-- POST 1 -->
+
+                <article class="post-card">
+
+                    <div class="post-header">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=32"
+                            alt="Sarah Williams"
+                        >
+
+                        <div class="post-user">
+
+                            <h3>Sarah Williams</h3>
+
+                            <span>
+                                @sarahwilliams · 2h
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </span>
+
+                        </div>
+
+                        <button class="post-menu">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="post-content">
+
+                        <p>
+                            Sometimes the best moments are the simple ones.
+                            Coffee, sunshine, and a good book. ☕️📖
+                        </p>
+
+                    </div>
+
+
+                    <img
+                        class="post-image"
+                        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80"
+                        alt="Coffee"
+                    >
+
+
+                    <div class="post-stats">
+
+                        <span>
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="like-count">324</span> likes
+                        </span>
+
+                        <span>
+                            28 comments · 8 shares
+                        </span>
+
+                    </div>
+
+
+                    <div class="post-actions">
+
+                        <button onclick="toggleLike(this)">
+                            <i class="fa-regular fa-heart"></i>
+                            Like
+                        </button>
+
+                        <button onclick="focusComment(this)">
+                            <i class="fa-regular fa-comment"></i>
+                            Comment
+                        </button>
+
+                        <button onclick="sharePost()">
+                            <i class="fa-solid fa-share"></i>
+                            Share
+                        </button>
+
+                        <button onclick="savePost(this)">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="comments-section">
+
+                        <div class="comment">
+
+                            <img
+                                src="https://i.pravatar.cc/50?img=12"
+                                alt="Daniel"
+                            >
+
+                            <div class="comment-content">
+
+                                <strong>Daniel Carter</strong>
+
+                                <p>
+                                    This looks absolutely amazing! 🔥
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="comment-input">
+
+                            <img
+                                src="https://i.pravatar.cc/50?img=47"
+                                alt="You"
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Write a comment..."
+                                onkeydown="submitComment(event)"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POST 2 -->
+
+                <article class="post-card">
+
+                    <div class="post-header">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=12"
+                            alt="Daniel Carter"
+                        >
+
+                        <div class="post-user">
+
+                            <h3>Daniel Carter</h3>
+
+                            <span>
+                                @danielcarter · 5h
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </span>
+
+                        </div>
+
+                        <button class="post-menu">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="post-content">
+
+                        <p>
+                            Just finished working on a new project!
+                            There is something really exciting about seeing
+                            an idea turn into something real. 💻🚀
+                        </p>
+
+                    </div>
+
+
+                    <img
+                        class="post-image"
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
+                        alt="Coding workspace"
+                    >
+
+
+                    <div class="post-stats">
+
+                        <span>
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="like-count">189</span> likes
+                        </span>
+
+                        <span>
+                            16 comments · 12 shares
+                        </span>
+
+                    </div>
+
+
+                    <div class="post-actions">
+
+                        <button onclick="toggleLike(this)">
+                            <i class="fa-regular fa-heart"></i>
+                            Like
+                        </button>
+
+                        <button onclick="focusComment(this)">
+                            <i class="fa-regular fa-comment"></i>
+                            Comment
+                        </button>
+
+                        <button onclick="sharePost()">
+                            <i class="fa-solid fa-share"></i>
+                            Share
+                        </button>
+
+                        <button onclick="savePost(this)">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POST 3 -->
+
+                <article class="post-card">
+
+                    <div class="post-header">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=44"
+                            alt="Emily Johnson"
+                        >
+
+                        <div class="post-user">
+
+                            <h3>Emily Johnson</h3>
+
+                            <span>
+                                @emilyjohnson · 8h
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </span>
+
+                        </div>
+
+                        <button class="post-menu">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="post-content">
+
+                        <p>
+                            Weekend adventures 🌿✨
+                            Nature always gives me a fresh perspective.
+                        </p>
+
+                    </div>
+
+
+                    <div class="image-grid">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+                            alt="Nature"
+                        >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
+                            alt="Forest"
+                        >
+
+                    </div>
+
+
+                    <div class="post-stats">
+
+                        <span>
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="like-count">412</span> likes
+                        </span>
+
+                        <span>
+                            34 comments · 19 shares
+                        </span>
+
+                    </div>
+
+
+                    <div class="post-actions">
+
+                        <button onclick="toggleLike(this)">
+                            <i class="fa-regular fa-heart"></i>
+                            Like
+                        </button>
+
+                        <button onclick="focusComment(this)">
+                            <i class="fa-regular fa-comment"></i>
+                            Comment
+                        </button>
+
+                        <button onclick="sharePost()">
+                            <i class="fa-solid fa-share"></i>
+                            Share
+                        </button>
+
+                        <button onclick="savePost(this)">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="loading-more">
+                <div class="loader"></div>
+                Loading more posts...
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDEBAR ================= -->
+
+        <aside class="right-sidebar">
+
+            <!-- People You May Know -->
+
+            <div class="right-card">
+
+                <div class="right-card-header">
+
+                    <h3>People You May Know</h3>
+
+                    <button onclick="showAllPeople()">
+                        See All
+                    </button>
+
+                </div>
+
+
+                <div class="suggestion">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=14"
+                        alt="James"
+                    >
+
+                    <div class="suggestion-info">
+
+                        <strong>James Anderson</strong>
+
+                        <span>12 mutual friends</span>
+
+                    </div>
+
+                    <button
+                        class="follow-btn"
+                        onclick="toggleFollow(this)"
+                    >
+                        Follow
+                    </button>
+
+                </div>
+
+
+                <div class="suggestion">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=25"
+                        alt="Mia"
+                    >
+
+                    <div class="suggestion-info">
+
+                        <strong>Mia Thompson</strong>
+
+                        <span>8 mutual friends</span>
+
+                    </div>
+
+                    <button
+                        class="follow-btn"
+                        onclick="toggleFollow(this)"
+                    >
+                        Follow
+                    </button>
+
+                </div>
+
+
+                <div class="suggestion">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=5"
+                        alt="Ryan"
+                    >
+
+                    <div class="suggestion-info">
+
+                        <strong>Ryan Wilson</strong>
+
+                        <span>5 mutual friends</span>
+
+                    </div>
+
+                    <button
+                        class="follow-btn"
+                        onclick="toggleFollow(this)"
+                    >
+                        Follow
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Trending -->
+
+            <div class="right-card">
+
+                <div class="right-card-header">
+
+                    <h3>Trending Topics</h3>
+
+                    <button>See All</button>
+
+                </div>
+
+
+                <div class="trend">
+
+                    <span>Trending in Technology</span>
+
+                    <strong>#WebDevelopment</strong>
+
+                    <small>12.4K posts</small>
+
+                </div>
+
+
+                <div class="trend">
+
+                    <span>Trending Worldwide</span>
+
+                    <strong>#Travel</strong>
+
+                    <small>86.2K posts</small>
+
+                </div>
+
+
+                <div class="trend">
+
+                    <span>Trending in Design</span>
+
+                    <strong>#UIDesign</strong>
+
+                    <small>8.7K posts</small>
+
+                </div>
+
+
+                <div class="trend">
+
+                    <span>Trending Today</span>
+
+                    <strong>#Photography</strong>
+
+                    <small>21.5K posts</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Online Friends -->
+
+            <div class="right-card">
+
+                <div class="right-card-header">
+
+                    <h3>Online Friends</h3>
+
+                    <span class="online-count">
+                        8 online
+                    </span>
+
+                </div>
+
+
+                <div class="online-friends">
+
+                    <div class="online-user">
+
+                        <div class="online-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/60?img=32"
+                                alt="Sarah"
+                            >
+
+                            <span></span>
+
+                        </div>
+
+                        <strong>Sarah</strong>
+
+                    </div>
+
+
+                    <div class="online-user">
+
+                        <div class="online-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/60?img=12"
+                                alt="Daniel"
+                            >
+
+                            <span></span>
+
+                        </div>
+
+                        <strong>Daniel</strong>
+
+                    </div>
+
+
+                    <div class="online-user">
+
+                        <div class="online-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/60?img=44"
+                                alt="Emily"
+                            >
+
+                            <span></span>
+
+                        </div>
+
+                        <strong>Emily</strong>
+
+                    </div>
+
+
+                    <div class="online-user">
+
+                        <div class="online-avatar">
+
+                            <img
+                                src="https://i.pravatar.cc/60?img=25"
+                                alt="Mia"
+                            >
+
+                            <span></span>
+
+                        </div>
+
+                        <strong>Mia</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- ================= NOTIFICATION PANEL ================= -->
+
+    <div
+        class="overlay"
+        id="notificationPanel"
+        onclick="closeNotifications(event)"
+    >
+
+        <div
+            class="notification-panel"
+            onclick="event.stopPropagation()"
+        >
+
+            <div class="panel-header">
+
+                <h2>Notifications</h2>
+
+                <button onclick="closeNotifications()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="notification">
+
+                <img
+                    src="https://i.pravatar.cc/50?img=32"
+                    alt="Sarah"
+                >
+
+                <p>
+                    <strong>Sarah Williams</strong>
+                    liked your post.
+                    <small>5 minutes ago</small>
+                </p>
+
+            </div>
+
+
+            <div class="notification">
+
+                <img
+                    src="https://i.pravatar.cc/50?img=12"
+                    alt="Daniel"
+                >
+
+                <p>
+                    <strong>Daniel Carter</strong>
+                    commented on your post.
+                    <small>20 minutes ago</small>
+                </p>
+
+            </div>
+
+
+            <div class="notification">
+
+                <img
+                    src="https://i.pravatar.cc/50?img=25"
+                    alt="Mia"
+                >
+
+                <p>
+                    <strong>Mia Thompson</strong>
+                    started following you.
+                    <small>1 hour ago</small>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-check"></i>
+        <span id="toastMessage">Done!</span>
+    </div>
+
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script src="app.js"></script>
+
+</body>
+</html>
